@@ -1,7 +1,8 @@
 import firebase from "firebase/compat/app";
-import "firebase/compat/auth";
 import "firebase/compat/firestore";
 import "firebase/compat/storage";
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_API_KEY,
@@ -12,13 +13,6 @@ const firebaseConfig = {
   appId: process.env.NEXT_PUBLIC_APP_ID,
 };
 
-// const firebaseConfig = {
-//   apiKey: "AIzaSyBjkekDCHndXENDHnkatG-2YhtHm0GTl1s",
-//   authDomain: "launcher-fec2b.firebaseapp.com",
-//   projectId: "launcher-fec2b",
-//   storageBucket: "launcher-fec2b.appspot.com",
-//   messagingSenderId: "154900869681",
-//   appId: "1:154900869681:web:896235ecbd93a976e51b10",
-// };
+const app = initializeApp(firebaseConfig);
 
-export default firebase.initializeApp(firebaseConfig);
+export const authService = getAuth();
