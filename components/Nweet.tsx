@@ -4,7 +4,7 @@ import { dbService } from "../firebase/firebase";
 
 const Nweet = ({ nweetObj }: any) => {
   const [editing, setEditing] = useState(false);
-  const [newNweet, setNewNweet] = useState(nweetObj.nwet);
+  const [newNweet, setNewNweet] = useState(nweetObj.nweet);
 
   const NweetTextRef = doc(dbService, "nweets", `${nweetObj.id}`);
 
@@ -18,10 +18,6 @@ const Nweet = ({ nweetObj }: any) => {
 
   const toggleEdit = async () => {
     setEditing((prev) => !prev);
-    //update 부분
-    // await updateDoc(NweetTextRef, {
-    //   text: newNweet,
-    // });
   };
 
   const onSubmit = async (e: any) => {

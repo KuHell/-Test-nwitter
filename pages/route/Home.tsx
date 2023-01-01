@@ -56,7 +56,7 @@ const Home = () => {
           value={nweet || ""}
           onChange={onChange}
         />
-        <input type="submit" value="Nweet" />
+        <input type="submit" value="등록" />
       </form>
       <div>
         {nweets.map((nweet, key) => {
